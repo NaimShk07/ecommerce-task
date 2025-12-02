@@ -4,8 +4,10 @@ const authRoutes = require("./routes/auth.route.js");
 const itemRoutes = require("./routes/item.route.js");
 const orderRoutes = require("./routes/order.route.js");
 const errorHandler = require("./middleware/error.middlware.js");
+const morgan = require("morgan");
 
 app.use(express.json());
+app.use(morgan("dev"));
 
 // Routes
 app.use("/api/users", authRoutes);

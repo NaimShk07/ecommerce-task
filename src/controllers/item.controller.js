@@ -1,8 +1,9 @@
 const Item = require("../models/Item.model.js");
+const ApiResponse = require("../utils/apiResponse.js");
 const asyncHandler = require("../utils/asyncHandler.js");
 
 // Get all items
-const getItems = asyncHandler (async (req, res) => {
+const getItems = asyncHandler(async (req, res) => {
 	const items = await Item.find().lean();
 	const response = new ApiResponse(200, items, "Items fetched successfully");
 	res.status(response.statusCode).json(response);
