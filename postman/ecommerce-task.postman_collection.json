@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "69ccf6ea-fe4e-4d31-a54c-010acc3f09ad",
+		"name": "ecommerce-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46100240"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"User John Doe\",\r\n    \"email\": \"userjohn@example.com\",\r\n    \"password\": \"password123\",\r\n    \"role\": \"User\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItems",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmYzM2Q3MGFmZDRlNzAwNDc3ZjI1NSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzY0NzAyOTM3LCJleHAiOjE3NjUzMDc3Mzd9.wsoJG8C6QqihK9uVdjGtbhNk9JihrYdqla5CjY1prfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addItems",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmYzM2Q3MGFmZDRlNzAwNDc3ZjI1NSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzY0NzAyOTM3LCJleHAiOjE3NjUzMDc3Mzd9.wsoJG8C6QqihK9uVdjGtbhNk9JihrYdqla5CjY1prfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Shirt\",\r\n  \"description\": \"Cotton Shirt\",\r\n  \"price\": 600,\r\n  \"stock\": 15\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateItems",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmYzM2Q3MGFmZDRlNzAwNDc3ZjI1NSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzY0NzAyOTM3LCJleHAiOjE3NjUzMDc3Mzd9.wsoJG8C6QqihK9uVdjGtbhNk9JihrYdqla5CjY1prfc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 1100,\r\n    \"stock\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/items/692f3c4ea4b4b77c64515453",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"items",
+						"692f3c4ea4b4b77c64515453"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmYzZDhhZDY0M2Y4ODJmNzM3ODhhYyIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzY0NzAzNjI3LCJleHAiOjE3NjUzMDg0Mjd9.B9LXLcKb97ZMdabQ1lko0dfoaAQa7adt2vB1QRSmxOs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"items\": [\r\n    { \"item\": \"692f3c4ea4b4b77c64515453\", \"quantity\": 2 },\r\n    { \"item\": \"692f3c74a4b4b77c64515457\", \"quantity\": 1 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrderById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmYzZDhhZDY0M2Y4ODJmNzM3ODhhYyIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzY0NzAzNjI3LCJleHAiOjE3NjUzMDg0Mjd9.B9LXLcKb97ZMdabQ1lko0dfoaAQa7adt2vB1QRSmxOs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"items\": [\r\n    { \"item\": \"692f3c4ea4b4b77c64515453\", \"quantity\": 2 },\r\n    { \"item\": \"692f3c74a4b4b77c64515457\", \"quantity\": 1 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/orders/692f40413971091fa02d3d8e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"orders",
+						"692f40413971091fa02d3d8e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOrderStatus",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmYzM2Q3MGFmZDRlNzAwNDc3ZjI1NSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTc2NDcwNDUxOSwiZXhwIjoxNzY1MzA5MzE5fQ.CcpHtP9UfvPR3KvOk9SDo9uQM1qqJR0h38b2Cz1Yzok",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"Shipped\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/orders/692f40413971091fa02d3d8e/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"orders",
+						"692f40413971091fa02d3d8e",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MmYzZDhhZDY0M2Y4ODJmNzM3ODhhYyIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzY0NzAzNjI3LCJleHAiOjE3NjUzMDg0Mjd9.B9LXLcKb97ZMdabQ1lko0dfoaAQa7adt2vB1QRSmxOs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"items\": [\r\n    { \"item\": \"692f3c4ea4b4b77c64515453\", \"quantity\": 2 },\r\n    { \"item\": \"692f3c74a4b4b77c64515457\", \"quantity\": 1 }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/orders/692f40413971091fa02d3d8e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"orders",
+						"692f40413971091fa02d3d8e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
